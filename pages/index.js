@@ -1,7 +1,7 @@
 import Layout from '../layouts/Layout.js';
 const Index = () => (
   <Layout>
-    <p>Hello World</p>
+    <h1>Hello World</h1>
   </Layout>
 )
 

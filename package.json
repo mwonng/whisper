@@ -1,6 +1,8 @@
 {
+  "dependencies": {
+    "next": "^6.0.3"
+  },
   "devDependencies": {
-    "next": "^6.0.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
