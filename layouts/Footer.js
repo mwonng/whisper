@@ -1,7 +1,12 @@
-
 import Link from 'next/link'
+import styled from 'styled-components';
+
+const Footer = styled.footer`
+  color: blue;
+  margin: 1rem auto;
+`;
 
 export default () => 
-  <footer>
-    {'I`m here to stay'}
-  </footer>
+  <Footer>
+    {`I'm here to stay`}
+  </Footer>

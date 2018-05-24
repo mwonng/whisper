@@ -11,7 +11,7 @@ const PostLink = (props) => (
 )
 
 export default () =>
-  <Layout>
+  <Layout title="Blog | Michael Wonng">
     <h1>Blog</h1>
     <PostLink id="hello-nextjs" title="Hello Next.js"/>
     <PostLink id="learn-nextjs" title="Learn Next.js is awesome"/>

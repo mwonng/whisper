@@ -3,3 +3,7 @@ node_modules/
 
 # ignore build
 .next/
+
+# yarn error
+
+/yarn-error.log
