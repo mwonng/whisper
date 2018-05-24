@@ -6,7 +6,12 @@ import Footer from './Footer';
 
 const NavLink = styled.a`
   padding: 0 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  &:hover {
+    color: blue;
+    text-decoration: underline;
+  }
 `
 
 export default () => 
