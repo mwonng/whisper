@@ -14,7 +14,6 @@ const Content = (props) => {
 
 const Post = (props) => {
   const { router } = props
-  console.log("router",router)
   return(
     <Layout>
       <Content url={router}/>
