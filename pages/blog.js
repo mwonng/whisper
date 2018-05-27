@@ -1,6 +1,9 @@
 import Layout from '../layouts/Layout.js';
 import Link from 'next/link'
 import blogs from '../posts/blogs';
+import fetch from 'isomorphic-unfetch'
+
+const CONTENT_API = 'https://api.github.com/repos/mwonng/whisper/contents/posts'
 
 const PostLink = (props) => (
   <li>
@@ -9,26 +12,35 @@ const PostLink = (props) => (
     </Link>
   </li>
 )
-const Blog = (props) =>
-  <Layout title="Blog | Michael Wonng">
-    <h1>Blog</h1>
-    <PostLink id="hello-nextjs" title="Hello Next.js"/>
-    <PostLink id="learn-nextjs" title="Learn Next.js is awesome"/>
-    <PostLink id="deploy-nextjs" title="Deploy apps with Zeit"/>
-    <hr/>
-    <ul>
-      { props.postsTitle.map( post => 
-        <li>{post.name}</li>
-      )}
-    </ul>
 
-  </Layout>
-
-Blog.getInitialProps = async ({pathname, req}) => {
-  const res = await fetch('https://api.github.com/repos/mwonng/whisper/contents/posts')
-  const json = await res.json()
-  return { postsTitle: json, path: pathname  }
+const Blog = (props) => {
+  return(
+    <Layout title="Blog | Michael Wonng">
+      <h1>Blog</h1>
+      <PostLink id="hello-nextjs" title="Hello Next.js"/>
+      <PostLink id="learn-nextjs" title="Learn Next.js is awesome"/>
+      <PostLink id="deploy-nextjs" title="Deploy apps with Zeit"/>
+      <hr/>
+      <ul>
+        { props.postsTitle.map( post => 
+          <li key={post.name} >{titlized(post.name)}</li>
+        )}
+      </ul>
+    </Layout>
+  )
 }
 
+
+Blog.getInitialProps = async ({pathname, req}) => {
+  const res = await fetch(CONTENT_API)
+  const json = await res.json()
+  return { postsTitle: json, path: pathname }
+}
+
+const titlized = (fileName) => {
+  var newstr = fileName.replace(/\..+$/, '').replace(/-|_/, ' ');
+  var titlizeString = newstr.charAt(0).toUpperCase() + newstr.slice(1); // capitalize the first letter - as an example.
+  return titlizeString
+} 
 
 export default Blog
