@@ -21,11 +21,9 @@ const Blog = (props) => {
       <PostLink id="learn-nextjs" title="Learn Next.js is awesome"/>
       <PostLink id="deploy-nextjs" title="Deploy apps with Zeit"/>
       <hr/>
-      <ul>
         { props.postsTitle.map( post => 
-          <li key={post.name} >{titlized(post.name)}</li>
+          <PostLink id={removeExt(post.name)} title={titlized(post.name)} key={post.name}/>
         )}
-      </ul>
     </Layout>
   )
 }
@@ -41,6 +39,11 @@ const titlized = (fileName) => {
   var newstr = fileName.replace(/\..+$/, '').replace(/-|_/, ' ');
   var titlizeString = newstr.charAt(0).toUpperCase() + newstr.slice(1); // capitalize the first letter - as an example.
   return titlizeString
-} 
+}
+
+const removeExt = (fileName) => {
+  var newstr = fileName.replace(/\..+$/, '');
+  return newstr
+}
 
 export default Blog
