@@ -1,17 +1,12 @@
 import Layout from '../layouts/Layout.js';
 import fetch from 'isomorphic-unfetch'
-import getList from '../test.js';
+// import getList from '../test.js';
 
 const Index = (props) => (
   <Layout>
     <h1>Hello World</h1>
     <p>this has: {props.stars}</p>
     <p>path: {props.path} </p>
-    <ul>
-      { getList.map(l => 
-        <li> {l} </li>
-      ) }
-    </ul>
   </Layout>
 )
 
