@@ -20,6 +20,7 @@ const Blog = (props) => {
       <PostLink id="hello-nextjs" title="Hello Next.js"/>
       <PostLink id="learn-nextjs" title="Learn Next.js is awesome"/>
       <PostLink id="deploy-nextjs" title="Deploy apps with Zeit"/>
+      <PostLink id="new-post" title="Post from GitHub"/>
       <hr/>
         { props.postsTitle.map( post => 
           <PostLink id={removeExt(post.name)} title={titlized(post.name)} key={post.name}/>

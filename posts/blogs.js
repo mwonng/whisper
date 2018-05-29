@@ -16,5 +16,11 @@ export default  [
     slogon: "deploy-nextjs",
     title: "Deploy apps with Zeit",
     content: "Curabitur blandit tempus porttitor.\n ## Maecenas faucibus mollis interdum."
+  },
+  {
+    id: "4",
+    slogon: "new-post",
+    title: "Post from Github",
+    content: "Maecenas faucibus mollis interdum."
   }
 ]
