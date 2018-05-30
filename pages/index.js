@@ -1,4 +1,4 @@
-import Layout from '../layouts/Layout.js';
+import Layout from '../src/layouts/Layout.js';
 import fetch from 'isomorphic-unfetch'
 // import getList from '../test.js';
 

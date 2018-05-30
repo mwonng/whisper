@@ -1,4 +1,4 @@
-import Layout from '../layouts/Layout.js'
+import Layout from '../src/layouts/Layout.js'
 import { withRouter } from 'next/router'
 import Markdown from 'react-markdown';
 import fetch from 'isomorphic-unfetch'

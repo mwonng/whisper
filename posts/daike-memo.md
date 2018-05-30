@@ -8,8 +8,7 @@
 	- [Designing better tables for enterprise applications](https://uxdesign.cc/designing-better-tables-for-enterprise-applications-f9ef545e9fbd)
 	- [Toolkit of a Product Designer](https://uxdesign.cc/toolkit-of-a-product-designer-b1da0f929164)
 
-3. **Egghead.io learning**
-	According to github [React basic](https://github.com/michaelwhk/react-basic)
+3. **Egghead.io learning** According to github [React basic](https://github.com/michaelwhk/react-basic)
 	- Commit 3981de5
 	- Commit c3e2337
 	- Commit 7c0bd40
