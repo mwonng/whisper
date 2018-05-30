@@ -1,6 +1,5 @@
 import Layout from '../layouts/Layout.js'
 import { withRouter } from 'next/router'
-import blogs from '../posts/blogs';
 import Markdown from 'react-markdown';
 import fetch from 'isomorphic-unfetch'
 import atob from 'atob';

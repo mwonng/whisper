@@ -1,6 +1,5 @@
 import Layout from '../layouts/Layout.js';
 import Link from 'next/link'
-import blogs from '../posts/blogs';
 import fetch from 'isomorphic-unfetch'
 
 const CONTENT_API = 'https://api.github.com/repos/mwonng/whisper/contents/posts'
@@ -17,11 +16,6 @@ const Blog = (props) => {
   return(
     <Layout title="Blog | Michael Wonng">
       <h1>Blog</h1>
-      <PostLink id="hello-nextjs" title="Hello Next.js"/>
-      <PostLink id="learn-nextjs" title="Learn Next.js is awesome"/>
-      <PostLink id="deploy-nextjs" title="Deploy apps with Zeit"/>
-      <PostLink id="new-post" title="Post from GitHub"/>
-      <hr/>
         { props.postsTitle.map( post => 
           <PostLink id={removeExt(post.name)} title={titlized(post.name)} key={post.name}/>
         )}
