@@ -5,6 +5,8 @@ import styled from 'styled-components';
 
 const LayoutWrapper = styled.div`
   font-family: 'Lato', sans-serif;
+  max-width: 1000px;
+  margin: auto;
 `
 
 export default (props) => {

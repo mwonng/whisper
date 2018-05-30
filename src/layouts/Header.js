@@ -2,7 +2,12 @@
 import Link from 'next/link'
 import styled from 'styled-components';
 
-import Footer from './Footer';
+const HeaderWrapper = styled.header`
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  border-bottom: 1px #e4e4e4 solid;
+`
 
 const NavLink = styled.a`
   padding: 0 1rem;
@@ -15,10 +20,10 @@ const NavLink = styled.a`
 `
 
 export default () => 
-  <header>
+  <HeaderWrapper>
     <nav>
       <Link href='/'><NavLink>Home</NavLink></Link>
       <Link href='/about'><NavLink>About</NavLink></Link>
       <Link href='/blog'><NavLink>Blog</NavLink></Link>
     </nav>
-  </header>
+  </HeaderWrapper>

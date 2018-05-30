@@ -22,11 +22,15 @@ const RightContent = styled.div`
   vertical-align: middle;
 `
 
+const PreWrapper = styled.pre`
+  white-space: pre-wrap;
+`
+
 const Content = (props) => {
   return(
     <ContentWrapper>
       <LeftContent><Markdown source={atob(props.content)} /></LeftContent>
-      <RightContent><pre>{atob(props.content)}</pre></RightContent>
+      <RightContent><PreWrapper>{atob(props.content)}</PreWrapper></RightContent>
     </ContentWrapper>
   )
 }
