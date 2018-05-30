@@ -4,6 +4,7 @@
     "next": "^6.0.3"
   },
   "devDependencies": {
+    "atob": "^2.1.1",
     "babel-plugin-styled-components": "^1.5.1",
     "express": "^4.16.3",
     "fs": "^0.0.1-security",

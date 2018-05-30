@@ -2,23 +2,37 @@ import Layout from '../layouts/Layout.js'
 import { withRouter } from 'next/router'
 import blogs from '../posts/blogs';
 import Markdown from 'react-markdown';
+import fetch from 'isomorphic-unfetch'
+import atob from 'atob';
+import styled from 'styled-components';
+
+const ContentWrapper = styled.div`
+  max-width: 1000px;
+  margin: auto;
+`
+const LeftContent = styled.div`
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+`
+
+const RightContent = styled.div`
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+`
 
 const Content = (props) => {
-  const post = blogs.filter(b => b.slogon == props.url.query.title)[0]
   return(
-    <div>
-      <h1>{post.title}</h1>
-      <p>{props.content}</p>
-      <hr/>
-      <h3>Markdown</h3>
-      <Markdown source={post.content} />
-    </div>
+    <ContentWrapper>
+      <LeftContent><Markdown source={atob(props.content)} /></LeftContent>
+      <RightContent>{atob(props.content)}</RightContent>
+    </ContentWrapper>
   )
 }
 
 const Post = (props) => {
   const { router, content } = props
-  console.log(props.test)
   return(
     <Layout>
       <Content url={router} content={content} />
