@@ -1,3 +1,8 @@
+---
+title: New Post
+create: 2018-06-01 12:00
+num: 1
+---
 # This is Markdown title
 
 ## Subtitle
