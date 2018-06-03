@@ -25,8 +25,6 @@ function readFiles(dirname, onFileContent, onError) {
 // }, function(err) {
 //   throw err;
 // });
-
-var metaResult = {}
 const testFolder = './posts/';
 fs.readdir(testFolder, (err, filenames) => {
   var data = filenames.map(filename => {
@@ -35,4 +33,10 @@ fs.readdir(testFolder, (err, filenames) => {
   });
   data.sort((a,b) => { return b.attributes.num -a.attributes.num; })
   console.log(data);
+  // fs.writeFile('message.txt', data, (err) => {
+  //   if (err) throw err;
+  //   console.log('The file has been saved!');
+  // });
+  fileContent = `export default ${JSON.stringify(data)}`
+  fs.writeFileSync('test.js', fileContent, 'utf-8');
 })
