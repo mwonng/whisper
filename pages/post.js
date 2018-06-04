@@ -28,29 +28,31 @@ const PreWrapper = styled.pre`
 `
 
 const Content = (props) => {
+  const post = summary.filter(b => b.filename == props.url.query.title)[0]
   return(
     <ContentWrapper>
-      <LeftContent><Markdown source={props.content.body} /></LeftContent>
-      <RightContent><PreWrapper>{props.content.body}</PreWrapper></RightContent>
+      <LeftContent><Markdown source={post.body} /></LeftContent>
+      <RightContent><PreWrapper>{post.body}</PreWrapper></RightContent>
     </ContentWrapper>
   )
 }
 
 const Post = (props) => {
   const { router, content } = props
+
   return(
     <Layout>
-      <Content url={router} content={content} />
+      <Content url={router} />
     </Layout>
   )
 }
 
-Post.getInitialProps = async (props) => {
+Post.getInitialProps = (props) => {
   // const link = `https://api.github.com/repos/mwonng/whisper/contents/posts/${props.query.title}.md`
   // const res = await fetch(link)
   // const json = await res.json()
 
-  const json = summary.find( s => s.filename == props.query.title);
+  const json = summary.filter( s => s.filename == props.query.title)[0];
   return { content: json }
 }
 export default withRouter(Post)
