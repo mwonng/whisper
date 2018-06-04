@@ -1,6 +1,6 @@
 import Layout from '../src/layouts/Layout.js';
 import Link from 'next/link'
-import fetch from 'isomorphic-unfetch'
+// import fetch from 'isomorphic-unfetch'
 import summary from '../json/summary.js';
 import { removeExt } from '../src/util/lib';
 // const CONTENT_API = 'https://api.github.com/repos/mwonng/whisper/contents/posts'
