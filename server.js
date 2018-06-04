@@ -1,7 +1,7 @@
 const express = require('express')
 const next = require('next')
 const generator = require('./src/util/generator')
-
+// import generator from './src/util/generator';
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
@@ -24,7 +24,7 @@ app.prepare()
     // const actualPage = '/index'
     // const queryParams = {} 
     // app.render(req, res, actualPage, queryParams)
-    res.send('hello world')
+    // res.send('<h1>hello world</h1>')
   })
 
 
