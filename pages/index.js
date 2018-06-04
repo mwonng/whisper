@@ -5,15 +5,10 @@ import fetch from 'isomorphic-unfetch'
 const Index = (props) => (
   <Layout>
     <h1>Hello World</h1>
-    <p>this has: {props.stars}</p>
-    <p>path: {props.path} </p>
+    <p>This is static homepage</p>
+    <p>You can find it in ./pages </p>
   </Layout>
 )
 
-Index.getInitialProps = async ({pathname, req}) => {
-  const res = await fetch('https://api.github.com/repos/zeit/next.js')
-  const json = await res.json()
-  return { stars: json.stargazers_count, path: pathname  }
-}
 
 export default Index
