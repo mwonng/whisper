@@ -1,9 +1,10 @@
 import Layout from '../src/layouts/Layout.js'
 import { withRouter } from 'next/router'
 import Markdown from 'react-markdown';
-import fetch from 'isomorphic-unfetch'
-import atob from 'atob';
+// import fetch from 'isomorphic-unfetch'
+// import atob from 'atob';
 import styled from 'styled-components';
+import summary from '../json/summary.js';
 
 const ContentWrapper = styled.div`
   max-width: 1000px;
@@ -29,8 +30,8 @@ const PreWrapper = styled.pre`
 const Content = (props) => {
   return(
     <ContentWrapper>
-      <LeftContent><Markdown source={atob(props.content)} /></LeftContent>
-      <RightContent><PreWrapper>{atob(props.content)}</PreWrapper></RightContent>
+      <LeftContent><Markdown source={props.content.body} /></LeftContent>
+      <RightContent><PreWrapper>{props.content.body}</PreWrapper></RightContent>
     </ContentWrapper>
   )
 }
@@ -45,9 +46,11 @@ const Post = (props) => {
 }
 
 Post.getInitialProps = async (props) => {
-  const link = `https://api.github.com/repos/mwonng/whisper/contents/posts/${props.query.title}.md`
-  const res = await fetch(link)
-  const json = await res.json()
-  return { content: json.content }
+  // const link = `https://api.github.com/repos/mwonng/whisper/contents/posts/${props.query.title}.md`
+  // const res = await fetch(link)
+  // const json = await res.json()
+
+  const json = summary.find( s => s.filename == props.query.title);
+  return { content: json }
 }
 export default withRouter(Post)

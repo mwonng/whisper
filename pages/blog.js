@@ -1,8 +1,8 @@
 import Layout from '../src/layouts/Layout.js';
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
-
-const CONTENT_API = 'https://api.github.com/repos/mwonng/whisper/contents/posts'
+import summary from '../json/summary.js';
+// const CONTENT_API = 'https://api.github.com/repos/mwonng/whisper/contents/posts'
 
 const PostLink = (props) => (
   <li>
@@ -17,7 +17,7 @@ const Blog = (props) => {
     <Layout title="Blog | Michael Wonng">
       <h1>Blog</h1>
         { props.postsTitle.map( post => 
-          <PostLink id={removeExt(post.name)} title={titlized(post.name)} key={post.name}/>
+          <PostLink id={removeExt(post.filename)} title={titlized(post.attributes.title)} key={post.attributes.title}/>
         )}
     </Layout>
   )
@@ -25,8 +25,9 @@ const Blog = (props) => {
 
 
 Blog.getInitialProps = async ({pathname, req}) => {
-  const res = await fetch(CONTENT_API)
-  const json = await res.json()
+  // const res = await fetch(CONTENT_API)
+  // const json = await res.json()
+  const json = summary
   return { postsTitle: json, path: pathname }
 }
 
