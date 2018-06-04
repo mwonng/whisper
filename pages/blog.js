@@ -2,6 +2,7 @@ import Layout from '../src/layouts/Layout.js';
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 import summary from '../json/summary.js';
+import { removeExt } from '../src/util/lib';
 // const CONTENT_API = 'https://api.github.com/repos/mwonng/whisper/contents/posts'
 
 const PostLink = (props) => (
@@ -16,7 +17,7 @@ const Blog = (props) => {
   return(
     <Layout title="Blog | Michael Wonng">
       <h1>Blog</h1>
-        { props.postsTitle.map( post => 
+        { props.postsList.map( post => 
           <PostLink id={removeExt(post.filename)} title={titlized(post.attributes.title)} key={post.attributes.title}/>
         )}
     </Layout>
@@ -25,10 +26,8 @@ const Blog = (props) => {
 
 
 Blog.getInitialProps = async ({pathname, req}) => {
-  // const res = await fetch(CONTENT_API)
-  // const json = await res.json()
-  const json = summary
-  return { postsTitle: json, path: pathname }
+  const postsList = summary.sort((a,b) => { return a.attributes.num -b.attributes.num; })
+  return { postsList, path: pathname }
 }
 
 const titlized = (fileName) => {
@@ -37,9 +36,6 @@ const titlized = (fileName) => {
   return titlizeString
 }
 
-const removeExt = (fileName) => {
-  var newstr = fileName.replace(/\..+$/, '');
-  return newstr
-}
+
 
 export default Blog
