@@ -1,7 +1,6 @@
 const express = require('express')
 const next = require('next')
 const lib = require('./src/util/server')
-// import generator from './src/util/generator';
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
@@ -19,12 +18,11 @@ app.prepare()
     app.render(req, res, actualPage, queryParams)
   })
 
+  // generator api
   server.get('/do', (req, res) => {
+    // api to generate new /json/summary.js
     lib.generator();
-    // const actualPage = '/index'
-    // const queryParams = {}
-    // app.render(req, res, actualPage, queryParams)
-    res.json({ message: 'hooray! welcome to our api!' });
+    res.json({ message: 'successfully update data source from markdown files' });
   })
 
 

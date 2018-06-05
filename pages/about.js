@@ -1,5 +1,4 @@
 import Layout from '../src/layouts/Layout.js';
-import fetch from 'isomorphic-unfetch'
 
 const About = (props) =>
   <Layout>
