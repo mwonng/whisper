@@ -3,7 +3,7 @@ import { withRouter } from 'next/router'
 import Markdown from 'react-markdown';
 // import fetch from 'isomorphic-unfetch'
 // import atob from 'atob';
-import { removeExt } from '../src/util/lib';
+import { removeExt } from '../src/util/client';
 import styled from 'styled-components';
 import summary from '../json/summary.js';
 

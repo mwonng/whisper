@@ -1,6 +1,6 @@
 const express = require('express')
 const next = require('next')
-const generator = require('./src/util/generator')
+const lib = require('./src/util/server')
 // import generator from './src/util/generator';
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -19,12 +19,12 @@ app.prepare()
     app.render(req, res, actualPage, queryParams)
   })
 
-  server.get('/do.it', (req, res) => {
-    generator()
+  server.get('/do', (req, res) => {
+    lib.generator();
     // const actualPage = '/index'
-    // const queryParams = {} 
+    // const queryParams = {}
     // app.render(req, res, actualPage, queryParams)
-    // res.send('<h1>hello world</h1>')
+    res.json({ message: 'hooray! welcome to our api!' });
   })
 
 
@@ -39,9 +39,9 @@ app.prepare()
     return handle(req, res)
   })
 
-  server.listen(3000, (err) => {
+  server.listen(4000, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:3000')
+    console.log('> Ready on http://localhost:4000')
   })
 })
 .catch((ex) => {

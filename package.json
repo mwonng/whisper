@@ -21,8 +21,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "node src/util/generator.js && node server.js",
-    "build": "node src/util/generator.js && next build ",
+    "dev": "node src/util/start.js && node server.js",
+    "build": "node src/util/start.js && next build ",
     "start": "NODE_ENV=production node server.js"
   }
 }
