@@ -7,3 +7,6 @@ node_modules/
 # yarn error
 
 /yarn-error.log
+
+#tmp file
+json/summary.js
