@@ -20,7 +20,7 @@ app.prepare()
 
   // generator api
   server.get('/do', (req, res) => {
-    // api to generate new /json/summary.js
+    // api to generate new /tmp/summary.js
     lib.generator();
     res.json({ message: 'successfully update data source from markdown files' });
   })

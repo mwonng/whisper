@@ -12,7 +12,7 @@ module.exports = {
       data.sort((a,b) => { return b.attributes.num -a.attributes.num; })
       // console.log(data);
       fileContent = `export default ${JSON.stringify(data)}`
-      fs.writeFileSync('json/summary.js', fileContent, 'utf-8');
+      fs.writeFileSync('tmp/summary.js', fileContent, 'utf-8');
     })
   },
   sortData: function(){

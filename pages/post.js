@@ -3,7 +3,7 @@ import { withRouter } from 'next/router'
 import Markdown from 'react-markdown';
 import { removeExt } from '../src/util/client';
 import styled from 'styled-components';
-import summary from '../json/summary.js';
+import summary from '../tmp/summary.js';
 
 const ContentWrapper = styled.div`
   max-width: 1000px;

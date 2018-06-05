@@ -14,7 +14,7 @@ There is a better repo called [Next-blog](https://github.com/tscanlin/next-blog)
 
 ### Update
 #### 5 June, 2018
- - add api to run script in server side to generate /json/summary.js
+ - add api to run script in server side to generate /tmp/summary.js
  - remove useless fetch
  - add Now in readme
 

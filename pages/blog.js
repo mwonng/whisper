@@ -1,6 +1,6 @@
 import Layout from '../src/layouts/Layout.js';
 import Link from 'next/link'
-import summary from '../json/summary.js';
+import summary from '../tmp/summary.js';
 import { removeExt } from '../src/util/client';
 // const CONTENT_API = 'https://api.github.com/repos/mwonng/whisper/contents/posts'
 
