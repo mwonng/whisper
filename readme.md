@@ -12,6 +12,20 @@ The reason i started with this repository is I dont really like to learn a HTML 
 
 There is a better repo called [Next-blog](https://github.com/tscanlin/next-blog) which is better than my repo if you only want to setup you blog with React asap
 
+### Data source
+Data source files locate at `/tmp/summary.js` and it will be update during deploy (actually run `npm run build`).
+
+Now.js not allow to write file after deployment. So if you want to update by api, you can run by GET route`/do` it will write the data source file again
+
+#### How to update post by deployment
+For now it can be update during deploy (actually run `npm run build`) which Heroku, Now supports
+
+#### How to update post by push to GitHub
+But if you want it can be update after every time you push to GitHub
+ 1. You need to host your app in a VPS or a server with write permission
+ 2. You can run by API GET `/do` it will write the data source file again
+ 3. set this route url as a hook in GitHub. 
+
 ### Update
 #### 5 June, 2018
  - add api to run script in server side to generate /tmp/summary.js

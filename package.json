@@ -22,7 +22,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node src/util/start.js && node server.js",
-    "build": "next build ",
+    "build": "node src/util/start.js && next build ",
     "start": "NODE_ENV=production node server.js"
   }
 }
